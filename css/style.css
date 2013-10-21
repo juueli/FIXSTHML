@@ -1,0 +1,127 @@
+html, body {
+  /*padding: 40px;*/
+}
+
+head
+
+{
+ font-family:'Myriad'; 
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  font-family:'Myriad';
+
+}
+
+h3 {
+  font-family:'Myriad';
+  font-weight: lighter;
+
+}
+    
+#header{
+	width: 100%; 
+	height: 400px; 
+	background-color: #fff000;
+} 
+.menu table{
+	
+
+	position:absolute; 
+	right:50px; 
+	top: 50px;
+
+	
+} 
+
+.menu a{
+		color:#ff0066;
+		font-family:'Myriad Pro';
+		font-size: 15px; 	
+		padding: 10px; 
+}
+.menu a:hover{
+		/* background-color: white; */
+		text-decoration: none;
+
+}
+
+
+.firstLabel {
+    margin-right: 10px;
+}
+
+ 
+#map_canvas {
+    margin: 0;
+    padding: 0;
+   	height: 100%;
+    }
+
+#logo_btn {
+	position: absolute;
+	top: 3%;
+	left: 3%;
+
+}
+
+#pencil {
+	position: absolute;
+	right: 0%;
+	bottom: 60%;
+	z-index: 2;
+	height: 40%;
+}
+
+#screwdriver {
+	position: absolute;
+	left: 35%;
+	top: 0%;
+	z-index: 2;
+	height: 24%;
+	}
+
+
+.span4{
+width: 50%; 
+	max-height: auto; 
+	background-color: #E8E8E8;
+	padding: 20px;
+	float: left;
+
+}
+
+img {
+    max-width: 300px;
+    max-height: auto;
+   }
+
+.image {
+    width: 300px;
+    min-height: 300px;
+    max-height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}
+
+#map{
+
+	position: relative;
+	margin:50px;
+	width: 800px;
+	height: 400px;
+
+}
+
+
+
+
+
+
+
+
+
+
