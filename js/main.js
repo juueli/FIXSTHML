@@ -13,6 +13,17 @@ $(document).ready(function(){
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     
 
+   var mapOptions = {
+           zoom: 9,
+           center: new google.maps.LatLng(28.9285745, 77.09149350000007),  
+           mapTypeId: google.maps.MapTypeId.TERRAIN
+       }
+
+  function resize (){                        
+  google.maps.event.addDomListener(window, 'resize', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize);
+  }
+
     function createMarker(attributes) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(attributes.lat, attributes.lng),
@@ -48,8 +59,8 @@ $(document).ready(function(){
           createMarker(point);
         }
         }
-        });
-    });
+     });
+});
 
 
 
