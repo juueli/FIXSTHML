@@ -116,6 +116,29 @@ width: 50%;
 
 }
 
+.infowindow{
+	width: auto; 
+	max-height: 200px; 
+	background-color: #E8E8E8;
+	float: left;
+	padding: 5px;
+	margin-bottom: 10px;
+
+}
+
+
+
+.pic {
+    width: 100px;
+    min-height: auto;
+    max-height: auto;
+    float: left;
+    padding: 5px;
+   	margin-bottom:5px;
+
+    
+    }
+
 
 
 
