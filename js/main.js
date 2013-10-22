@@ -61,9 +61,7 @@ $(document).ready(function(){
         }
         //console.log(point.text);//
 
-        $("#list").append("<img src='" + point.media + "'><br>" +  point.text + "<br>" + point.created_at + "<br>");
-
-        //$("#list").append( "<div class="image"> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p>");
+      $("#list").append( "<div class='image'> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p>");  
  
 
         //here you are appending an image to the #list
