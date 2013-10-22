@@ -117,10 +117,44 @@ function createMarker(attributes)
     $.getJSON(url, function(data) {
       for (var i = 0; i < data.length; i++) {
         point = data[i];
+        
         if (point.lat != null && point.lat != undefined) {
           createMarker(point);
         }
+        //console.log(point.text);//
+
+        $("#list").append("<img src='" + point.media + "'><br>" +  point.text + "<br>" + point.created_at + "<br>");
+
+        //$("#list").append( "<div class="image"> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p>");
+ 
+
+        //here you are appending an image to the #list
         }
+<<<<<<< HEAD
+=======
+
+
+     });
+
+    /*function data(response) {
+
+    for (var i = 0; i < response.data.length; i++) 
+    var time = response.data[i].created_at;
+    var text= response.data[i].text;
+    var lat= response.data[i].lat;
+    var lng = response.data[i].lng;
+    var media = response.data[i].media; 
+
+    $("#data").append("<media src='" + time + "'>", "<p>" + text + "</p>");
+
+    var getData = $ val(),
+getData = ""https:"https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/?q=select%20%0A%09created_at%2C%0A%20%20%20%20text%2C%0A%20%20%20%20lat%2C%0A%20%20%20%20lng%2C%0A%20%20%20%20media%0Afrom%20tweets%0Agroup%20by%20created_at%0A"
+
+
+
+    }
+    */
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
 });
     });
 
