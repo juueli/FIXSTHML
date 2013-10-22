@@ -153,7 +153,6 @@ getData = ""https:"https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/
     }
     */
 });
-    });
 
 
 
