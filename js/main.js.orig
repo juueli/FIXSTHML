@@ -130,6 +130,11 @@ function createMarker(attributes)
 
         //here you are appending an image to the #list
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
 
 
      });
@@ -152,6 +157,10 @@ getData = ""https:"https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/
 
     }
     */
+<<<<<<< HEAD
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
+=======
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
 });
     });
 
