@@ -28,7 +28,7 @@
       <div class="menu">
       <table>
           <tr>
-            <td><a href="http://google.com">About</a> </td> 
+            <td><a href="http://google.com" >About</a> </td> 
             <td><a href="#">Report</a></td>
             <td><a href="#">See Reports</a></td>
             <td><a href="#">Contact</a></td>
@@ -56,7 +56,7 @@
     <h2>INSTRUCTIONS</h2>
 
     <p>
-      There are two ways in which you can report either directly though your twitter account or using this platform.
+      There are two ways in witch you can report either directly though your twitter account or using this platform.
       1. If you are using twitter simply write to @fixstockholm, take a photo if you like and geotag the whole thing. 
       See <a href="https://support.twitter.com/articles/20170356-ofte-stillede-sprgsmal-om-twitter">here</a> for how to geolocation.  
       </p>
@@ -68,8 +68,33 @@
       <a href="https://twitter.com/intent/tweet?screen_name=FixSthlm&text=%23improve" class="twitter-mention-button" data-size="large"  data-related="FixSthlm">Tweet to @FixSthlm</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
+
+    
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+     <!-- /.map container -->
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
+=======
+     <!-- /.map container -->
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
     
 <div id="map" align="center" class="responsive"></div> 
+
+
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+  <!-- /.list visulization -->
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
+=======
+  <!-- /.list visulization -->
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
+  
 
     <div id="list" class="container-fluid">
   <div class="row-fluid">

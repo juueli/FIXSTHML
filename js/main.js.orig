@@ -123,11 +123,18 @@ function createMarker(attributes)
         }
         //console.log(point.text);//
 
-      $("#list").append( "<div class='image'> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p>");  
+        $("#list").append("<img src='" + point.media + "'><br>" +  point.text + "<br>" + point.created_at + "<br>");
+
+        //$("#list").append( "<div class="image"> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p>");
  
 
         //here you are appending an image to the #list
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
 
 
      });
@@ -150,7 +157,12 @@ getData = ""https:"https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/
 
     }
     */
+<<<<<<< HEAD
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
+=======
+>>>>>>> 4326eb21294c9561a3443e448c89e2944875b190
 });
+    });
 
 
 
