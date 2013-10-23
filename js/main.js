@@ -123,7 +123,7 @@ function createMarker(attributes)
         }
         //console.log(point.text);//
 
-      $("#list").append( "<div class='image'> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p>");  
+      $("#list").append("<div class='span4'> <div class='image'> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p></div></div>");  
  
 
         //here you are appending an image to the #list
