@@ -88,7 +88,7 @@ function createMarker(attributes)
     ({
       position: new google.maps.LatLng(attributes.lat, attributes.lng),
       map: map,
-      icon: iconBase + 'caution.png',
+      icon: iconBase + 'pin_yellow_outline3.png',
     });
 
 
