@@ -115,15 +115,55 @@ function createMarker(attributes)
     var url = "https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/?q=select%20%0A%09created_at%2C%0A%20%20%20%20text%2C%0A%20%20%20%20lat%2C%0A%20%20%20%20lng%2C%0A%20%20%20%20media%0Afrom%20tweets%0Agroup%20by%20created_at%0A";
     
     $.getJSON(url, function(data) {
+       $("#list").empty();
+        
+      var strHTML= "";
+      console.log("this many images: " + data.length);
+
       for (var i = 0; i < data.length; i++) {
         point = data[i];
+
+        if(i%3===0){
+          strHTML += "<div class='row'>";
+          strHTML += "<div class='review col-xs-12 col-md-4'>";
+          strHTML += "<div class='image'><img class='img-responsive' src='" + point.media + "'><br>";
+          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
+          if(i === data.length){ //we have reached the final image, close the row
+              strHTML += "</div>" //closing the ROW-div
+              $("#list").append(strHTML);
+              strHTML = "";
+          }
+ 
+        }
+        else if(i%3===1){
+          strHTML += "<div class='review col-xs-12 col-md-4'>";
+          strHTML += "<div class='image'><img class='img-responsive' src='" + point.media + "'><br>";
+          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
+          if(i === data.length){ //we have reached the final image, close the row
+              strHTML += "</div>" //closing the ROW-div
+              $("#list").append(strHTML);
+              strHTML = "";
+          }
+        }
+        else if(i%3===2){
+          strHTML += "<div class='review col-xs-12 col-md-4'>";
+          strHTML += "<div class='image'><img class='img-responsive' src='" + point.media + "'><br>";
+          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
+        
+          strHTML += "</div>" //closing the ROW-div
+          //console.log(strHTML);
+          $("#list").append(strHTML);
+          strHTML = "";
+        }
+
+        
         
         if (point.lat != undefined && point.lat != undefined) {
           createMarker(point);
         }
         //console.log(point.text);//
 
-      $("#list").append("<div class='span4'> <div class='image'> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p></div></div>");  
+      //$("#list").append("<div class='span4'> <div class='image'><img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p></div></div>");  
  
 
         //here you are appending an image to the #list
