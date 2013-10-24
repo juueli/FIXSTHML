@@ -118,7 +118,7 @@ function createMarker(attributes)
       for (var i = 0; i < data.length; i++) {
         point = data[i];
         
-        if (point.lat != null && point.lat != undefined) {
+        if (point.lat != undefined && point.lat != undefined) {
           createMarker(point);
         }
         //console.log(point.text);//
