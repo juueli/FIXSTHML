@@ -12,38 +12,75 @@ h1 {
   font-size: 50px;
   margin-bottom: 30px;
   font-family:'Myriad';
+letter-spacing: 0.2em;
+
 
 }
 
 h3 {
   font-family:'Myriad';
-  font-weight: light;
+  font-weight: light;	
+  letter-spacing: 0.2em;
 
 }
-    
+
+h5 {
+
+font-size: 16pt;
+font-family:'Myriad Pro';
+letter-spacing: 0.2em;
+  
+ }
+
 #header{
 	width: 100%; 
-	height: 350px; 
-	background-color: #FFFF33;
+	height: 300px; 
+	background-color: #FFCC00;
 } 
-.menu table{
-	
 
+#tbox {
+	color: #282828;
+    width: 200px;
+    height: 50px;
+    background: #FFCC00;
+    pointer-events: none;
+    position: relative;
+    top: 38px;
+    padding: 10px, 60px;
+}
+
+#tboxtxt
+{
+	text-align: center;
+	font-weight: bold;
+    font-family: Myriad Pro;
+    font-size: 18pt;
+	letter-spacing: 0.2em;
+	padding-top:  10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+.menu table{
 	position:absolute; 
 	right:50px; 
 	top: 50px;
+	z-index: 2;
 
 } 
-
+	
 .menu a{
-		color:#ff0066;
+		color:#FF0000;
 		font-family:'Myriad Pro';
 		font-size: 15px; 	
 		padding: 10px; 
 }
+
 .menu a:hover{
-		/* background-color: white; */
 		text-decoration: none;
+		color:#202020;
 
 }
 
@@ -59,6 +96,16 @@ h3 {
    	height: 100%;
     }
 
+
+#logo_FS {
+	
+ 
+padding-top: 100px;
+
+
+}
+
+
 #logo_btn {
 	position: absolute;
 	top: 3%;
@@ -69,7 +116,7 @@ h3 {
 #pencil {
 	position: absolute;
 	right: 0%;
-	bottom: 60%;
+	bottom: 45%;
 	z-index: 2;
 	height: 40%;
 }
@@ -83,24 +130,33 @@ h3 {
 	}
 
 
-.span4{
-width: 50%; 
-	max-height: auto; 
-	background-color: #E8E8E8;
+
+
+.review{
+    position:relative;
 	text-align:  left;
 	padding: 10px;
 	margin-bottom: 20px;
-
+	margin-right: auto;
+	margin-left: auto;
 }
 
 
 .image {
-    width: 100px;
+
+    width: 320px;
     min-height: auto;
     max-height: auto;
     float: left;
     padding: 10px;
    	margin-bottom:10px; 
+
+	background-color: #E8E8E8;
+	padding: 15px;
+}
+.image img{
+width: 100%;
+
 
     }
 
@@ -113,38 +169,36 @@ width: 50%;
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .infowindow{
-	width: auto; 
-	max-height: 200px; 
-	background-color: #E8E8E8;
-	float: left;
-	padding: 5px;
-	margin-bottom: 10px;
+	width: 150px; 
+	max-width: none;
+	max-height: auto; 
+	margin-left: auto;
+    margin-right: auto;
+    font-size:24px;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
 
 }
-
-
 
 .pic {
     width: 100px;
     min-height: auto;
-    max-height: auto;
-    float: left;
-    padding: 5px;
-   	margin-bottom:5px;
-
-    
+    max-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 15px;
     }
 
 p {
 	text-align:  left;
-	padding-left: 10px;
-	font-family: myriad 
-	font-size: 11pt;
+	padding-left: 16px;
+	font-family: Arial;
+	font-size:20px;
 
 }
+
+.gmnoprint img { max-width: none; }
 
 
 

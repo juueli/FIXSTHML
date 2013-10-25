@@ -56,10 +56,7 @@ var styledMap = new google.maps.StyledMapType(styles,
 
 markers = [];
 
-
 var iconBase = 'img/';
-  
-var infowindow = null;
 
 var myLatlng = new google.maps.LatLng(59.32, 18.06);
 
@@ -67,7 +64,6 @@ var mapOptions =
     {
       zoom: 12,
       center: myLatlng,
-      scrollwheel: false,
       mapTypeControlOptions: 
     {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map']
@@ -92,23 +88,48 @@ function createMarker(attributes)
       icon: iconBase + 'pin_yellow_outline3.png',
     });
 
+    var myOptions = {
+                 content: boxText
+                ,disableAutoPan: false
+                ,maxWidth: 0
+                ,pixelOffset: new google.maps.Size(-140, 0)
+                ,zIndex: null
+                ,boxStyle: { 
+                  background: "#FFFFF"
+                  ,opacity: 0.75
+                  ,width: "280px"
+                 }
+                ,closeBoxMargin: "10px 2px 2px 2px"
+                ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+                ,infoBoxClearance: new google.maps.Size(1, 1)
+                ,isHidden: false
+                ,pane: "floatPane"
+                ,enableEventPropagation: false
+        };
+
+        var ib = new InfoBox(myOptions);
+        ib.open(map, marker);
+
 
       google.maps.event.addListener(marker, 'click', function()
       {
         map.setZoom(15);
-        if (infowindow) 
+        if (InfoBox) 
       {
-        infowindow.close();
+        InfoBox.close();
       }
 
         var contentString = "<div class='infowindow'><p>" + "<br><img class='pic' src='" + attributes.media + "'><br>" + attributes.text + "<br>Created at " + attributes.created_at;"</p></div>"
-        infowindow = new google.maps.InfoWindow
+        infowindow = new google.maps.InfoBox
       ({
           content: contentString
       });
-        map.setCenter(marker.getPosition());
-        infowindow.open(map,marker);
+        InfoBox.open(map,marker);
       });
+
+      var boxText = document.createElement("div");
+        boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
+        boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";
 
       marker.created_at = new Date(attributes.created_at).getTime();
       markers.push(marker);
@@ -117,63 +138,15 @@ function createMarker(attributes)
     var url = "https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/?q=select%20%0A%09created_at%2C%0A%20%20%20%20text%2C%0A%20%20%20%20lat%2C%0A%20%20%20%20lng%2C%0A%20%20%20%20media%0Afrom%20tweets%0Agroup%20by%20created_at%0A";
     
     $.getJSON(url, function(data) {
-       $("#list").empty();
-        
-      var strHTML= "";
-      console.log("this many images: " + data.length);
-
       for (var i = 0; i < data.length; i++) {
         point = data[i];
-        var img;
-
-        if(point.media === null){
-          img = "img/FixSthlm_image_ifnone.png";
-        }
-        else{
-          img = point.media;
-        }
-
-        if(i%3===0){
-          strHTML += "<div class='row'>";
-          strHTML += "<div class='review col-xs-12 col-md-4'>";
-          strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
-          if(i === data.length){ //we have reached the final image, close the row
-              strHTML += "</div>" //closing the ROW-div
-              $("#list").append(strHTML);
-              strHTML = "";
-          }
- 
-        }
-        else if(i%3===1){
-          strHTML += "<div class='review col-xs-12 col-md-4'>";
-          strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
-          if(i === data.length){ //we have reached the final image, close the row
-              strHTML += "</div>" //closing the ROW-div
-              $("#list").append(strHTML);
-              strHTML = "";
-          }
-        }
-        else if(i%3===2){
-          strHTML += "<div class='review col-xs-12 col-md-4'>";
-          strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
         
-          strHTML += "</div>" //closing the ROW-div
-          //console.log(strHTML);
-          $("#list").append(strHTML);
-          strHTML = "";
-        }
-
-        
-        
-        if (point.lat != undefined && point.lat != undefined) {
+        if (point.lat != null && point.lat != undefined) {
           createMarker(point);
         }
         //console.log(point.text);//
 
-      //$("#list").append("<div class='span4'> <div class='image'><img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p></div></div>");  
+      $("#list").append("<div class='span4'> <div class='image'> '<img src='" + point.media + "'><br><p>" +  point.text + "<br>" + point.created_at + "<br></p></div></div>");  
  
 
         //here you are appending an image to the #list
@@ -201,7 +174,3 @@ getData = ""https:"https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/
     }
     */
 });
-
-
-
-
