@@ -122,11 +122,19 @@ function createMarker(attributes)
 
       for (var i = 0; i < data.length; i++) {
         point = data[i];
+        var img;
+
+        if(point.media === null){
+          img = "img/FixSthlm_image_ifnone.png";
+        }
+        else{
+          img = point.media;
+        }
 
         if(i%3===0){
           strHTML += "<div class='row'>";
           strHTML += "<div class='review col-xs-12 col-md-4'>";
-          strHTML += "<div class='image'><img class='img-responsive' src='" + point.media + "'><br>";
+          strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
           strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
@@ -137,7 +145,7 @@ function createMarker(attributes)
         }
         else if(i%3===1){
           strHTML += "<div class='review col-xs-12 col-md-4'>";
-          strHTML += "<div class='image'><img class='img-responsive' src='" + point.media + "'><br>";
+          strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
           strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
@@ -147,7 +155,7 @@ function createMarker(attributes)
         }
         else if(i%3===2){
           strHTML += "<div class='review col-xs-12 col-md-4'>";
-          strHTML += "<div class='image'><img class='img-responsive' src='" + point.media + "'><br>";
+          strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
           strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
         
           strHTML += "</div>" //closing the ROW-div
