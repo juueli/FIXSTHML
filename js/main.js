@@ -67,6 +67,7 @@ var mapOptions =
     {
       zoom: 12,
       center: myLatlng,
+      scrollwheel: false,
       mapTypeControlOptions: 
     {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map']
@@ -105,6 +106,7 @@ function createMarker(attributes)
       ({
           content: contentString
       });
+        map.setCenter(marker.getPosition());
         infowindow.open(map,marker);
       });
 
