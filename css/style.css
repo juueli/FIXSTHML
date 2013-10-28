@@ -73,23 +73,42 @@ letter-spacing: 0.2em;
 
 
 .menu table{
-	position:absolute; 
-	right:50px; 
-	top: 50px;
+	position:fixed; 
+	right:0px; 
+	top: 0px;
 	z-index: 2;
-
+    background-color: #FFCC00;
+    
 } 
-	
+
+#menu2{
+	position:fixed; 
+	right:0px; 
+	top: 0px;
+	z-index: 1;
+    background-color: #FFCC00;
+    width: 100%;
+	pointer-events: none;
+    height: 30px;
+}
 .menu a{
+<<<<<<< HEAD
 		color:#FF0000;
 		font-family:'Oxygen';
 		font-size: 15px; 	
+=======
+
+		color:black;
+		font-family:'Myriad Pro';
+		font-size: 20px; 	
+>>>>>>> 464beed69c082c00fec7f6b4b3893a1c716d025e
 		padding: 10px; 
+		text-align: right
 }
 
 .menu a:hover{
 		text-decoration: none;
-		color:#202020;
+		color:red;
 
 }
 
@@ -154,6 +173,7 @@ width:100%
 
 
 .image {
+
 
     width: 320px;
     min-height: auto;
