@@ -92,17 +92,11 @@ letter-spacing: 0.2em;
     height: 30px;
 }
 .menu a{
-<<<<<<< HEAD
-		color:#FF0000;
-		font-family:'Oxygen';
-		font-size: 15px; 	
-=======
 
 		color:black;
-		font-family:'Myriad Pro';
+		font-family:'Oxygen';
 		font-size: 20px; 	
->>>>>>> 464beed69c082c00fec7f6b4b3893a1c716d025e
-		padding: 10px; 
+		padding: 20px; 
 		text-align: right
 }
 
@@ -135,6 +129,13 @@ width:100%
 
 }
 
+#FixStockholm_image
+{
+
+max-width:365px;
+width:100%
+
+}
 
 #logo_btn {
 	position: absolute;
@@ -173,15 +174,6 @@ width:100%
 
 
 .image {
-
-
-    width: 320px;
-    min-height: auto;
-    max-height: auto;
-    float: left;
-    padding: 10px;
-   	margin-bottom:10px; 
-	/*background-color: #FFCC00;*/
 	background-color: #E8E8E8;
 	padding: 15px;
 }
