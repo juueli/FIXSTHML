@@ -20,7 +20,7 @@ h1{
 
 .paragraphtxt{
   font-family:'Oxygen';
-  font-size: 16pt;
+  font-size: 14pt;
   text-align: left;
   
   }
@@ -133,19 +133,20 @@ width:100%
 
 }
 
-#FixStockholm_image
-{
-
+#FixStockholm_image{
 max-width:365px;
 width:100%
+}
 
+#reportImage{
+max-width:365px;
+width:100%
 }
 
 #logo_btn {
 	position: absolute;
 	top: 3%;
 	left: 3%;
-
 }
 
 #pencil {
