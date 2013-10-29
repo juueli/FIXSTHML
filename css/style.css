@@ -226,6 +226,11 @@ p {
 
 .gmnoprint img { max-width: none; }
 
+#report {
+    margin-left: auto;
+    margin-right: auto;
+    }
+
 
 
 
