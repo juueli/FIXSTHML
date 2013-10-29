@@ -45,14 +45,14 @@ letter-spacing: 0.2em;
 #header{
 	width: 100%; 
 	height: 300px; 
-	background-color: #FFCC00;
+	background-color:#FFE500;
 } 
 
 #tbox {
 	color: #282828;
     width: 200px;
     height: 50px;
-    background: #FFCC00;
+    background: #FFE500;
     pointer-events: none;
     position: relative;
     top: 38px;
@@ -77,7 +77,8 @@ letter-spacing: 0.2em;
 	right:0px; 
 	top: 0px;
 	z-index: 2;
-    background-color: #FFCC00;
+    background-color: #FFE500;
+    
     
 } 
 
@@ -86,16 +87,17 @@ letter-spacing: 0.2em;
 	right:0px; 
 	top: 0px;
 	z-index: 1;
-    background-color: #FFCC00;
+    background-color:#FFE500;
     width: 100%;
 	pointer-events: none;
     height: 30px;
+
 }
 .menu a{
 
 		color:black;
 		font-family:'Oxygen';
-		font-size: 20px; 	
+		font-size: 11pt; 	
 		padding: 20px; 
 		text-align: right
 }
@@ -103,6 +105,8 @@ letter-spacing: 0.2em;
 .menu a:hover{
 		text-decoration: none;
 		color:red;
+		font-family:'Oxygen';
+		font-size: 11pt; 
 
 }
 
@@ -126,7 +130,6 @@ max-width:497px;
 width:100%
 
 
-
 }
 
 #FixStockholm_image
@@ -147,9 +150,9 @@ width:100%
 #pencil {
 	position: absolute;
 	right: 0%;
-	bottom: 45%;
-	z-index: 2;
-	height: 40%;
+	bottom: 60%;
+	z-index: 3;
+	height: 30%;
 }
 
 #screwdriver {
