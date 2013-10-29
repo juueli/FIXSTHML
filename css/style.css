@@ -5,55 +5,64 @@ html, body {
 head
 
 {
- font-family:'Myriad'; 
+ font-family:'Oxygen'; 
 }
 
-h1 {
-  font-size: 50px;
-  margin-bottom: 30px;
-  font-family:'Myriad';
-letter-spacing: 0.2em;
-
-
-}
-
-h3 {
-  font-family:'Myriad';
-  font-weight: light;	
-  letter-spacing: 0.2em;
+h1{
+	font-size: 15pt;
+	margin-bottom: 30px;
+	font-family:'Oxygen';
+	color: #202020;
+    letter-spacing: 0.1em;
+	text-decoration:none;
 
 }
+
+.pagragraphtxt{
+  font-family:'Oxygen';
+  font-size: 14pt;
+  text-align:  left;
+  
+  }
 
 h5 {
-
 font-size: 16pt;
-font-family:'Myriad Pro';
+font-family:'Oxygen';
 letter-spacing: 0.2em;
   
  }
+ 
+  /* a {
+	font-size: 20px;
+	margin-bottom: 30px;
+	font-family:'Oxygen';
+	font-color: #000000;
+    text-decoration: none;
+	letter-spacing: 0.1em;
+}
+*/
 
 #header{
 	width: 100%; 
 	height: 300px; 
-	background-color: #FFCC00;
+	background-color:#FFE500;
 } 
 
 #tbox {
 	color: #282828;
     width: 200px;
     height: 50px;
-    background: #FFCC00;
+    background: #FFE500;
     pointer-events: none;
     position: relative;
     top: 38px;
     padding: 10px, 60px;
 }
 
-#tboxtxt
-{
+#tboxtxt{
 	text-align: center;
 	font-weight: bold;
-    font-family: Myriad Pro;
+    font-family:'Oxygen';
     font-size: 18pt;
 	letter-spacing: 0.2em;
 	padding-top:  10px;
@@ -64,23 +73,40 @@ letter-spacing: 0.2em;
 
 
 .menu table{
-	position:absolute; 
-	right:50px; 
-	top: 50px;
+	position:fixed; 
+	right:0px; 
+	top: 0px;
 	z-index: 2;
-
+    background-color: #FFE500;
+    
+    
 } 
-	
+
+#menu2{
+	position:fixed; 
+	right:0px; 
+	top: 0px;
+	z-index: 1;
+    background-color:#FFE500;
+    width: 100%;
+	pointer-events: none;
+    height: 30px;
+
+}
 .menu a{
-		color:#FF0000;
-		font-family:'Myriad Pro';
-		font-size: 15px; 	
-		padding: 10px; 
+
+		color:black;
+		font-family:'Oxygen';
+		font-size: 11pt; 	
+		padding: 20px; 
+		text-align: right
 }
 
 .menu a:hover{
 		text-decoration: none;
-		color:#202020;
+		color:red;
+		font-family:'Oxygen';
+		font-size: 11pt; 
 
 }
 
@@ -104,9 +130,15 @@ max-width:497px;
 width:100%
 
 
-
 }
 
+#FixStockholm_image
+{
+
+max-width:365px;
+width:100%
+
+}
 
 #logo_btn {
 	position: absolute;
@@ -118,9 +150,9 @@ width:100%
 #pencil {
 	position: absolute;
 	right: 0%;
-	bottom: 45%;
-	z-index: 2;
-	height: 40%;
+	bottom: 60%;
+	z-index: 3;
+	height: 30%;
 }
 
 #screwdriver {
@@ -136,7 +168,7 @@ width:100%
 
 .review{
     position:relative;
-	text-align:  left;
+	text-align:left;
 	padding: 10px;
 	margin-bottom: 20px;
 	margin-right: auto;
@@ -145,14 +177,6 @@ width:100%
 
 
 .image {
-
-    width: 320px;
-    min-height: auto;
-    max-height: auto;
-    float: left;
-    padding: 10px;
-   	margin-bottom:10px; 
-
 	background-color: #E8E8E8;
 	padding: 15px;
 }
@@ -177,8 +201,8 @@ width: 100%;
 	max-height: auto; 
 	margin-left: auto;
     margin-right: auto;
-    font-size:24px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-size:24pt;
+    font-family:'Oxygen';
     text-align: center;
 
 }
@@ -194,10 +218,10 @@ width: 100%;
 
 p {
 	text-align:  left;
-	padding-left: 16px;
-	font-family: Arial;
-	font-size:20px;
-
+	padding-left: 12px;
+	font-family: 'Oxygen';
+	font-size:11pt;
+	color: #202020;
 }
 
 .gmnoprint img { max-width: none; }

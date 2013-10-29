@@ -51,6 +51,8 @@ var styles = [
   }
 ];
 
+
+
 var styledMap = new google.maps.StyledMapType(styles,
     {name: "Styled Map"});
 
