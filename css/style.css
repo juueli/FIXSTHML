@@ -180,12 +180,8 @@ width:100%
 .image {
 	background-color: #E8E8E8;
 	padding: 15px;
-}
-.image img{
-width: 100%;
-
-
-    }
+	width: 100%;
+	}
 
 #map{
 
@@ -226,6 +222,11 @@ p {
 }
 
 .gmnoprint img { max-width: none; }
+
+#report {
+    margin-left: auto;
+    margin-right: auto;
+    }
 
 
 
