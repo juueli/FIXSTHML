@@ -107,8 +107,8 @@ function createMarker(attributes)
       {
         infowindow.close();
       }
-     
-        var contentString = "<div class='infowindow'><p>" + "<br><img class='pic' src='" + attributes.media + "'><br>" + "<a href='#"+ attributes.id_str +"'> See in the list </a><br>" + attributes.text + "<br>Created at " + attributes.created_at; + "</p></div>"
+        var newText1 = attributes.text.replace(/([\S]+\.(MUSEUM|TRAVEL|AERO|ARPA|ASIA|COOP|INFO|NAME|BIZ|CAT|COM|INT|JOBS|NET|ORG|PRO|TEL|AC|AD|AE|AF|AG|AI|AL|AM|AN|AO|AQ|AR|AS|AT|AU|au|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BR|BS|BT|BV|BW|BY|BZ|CA|CC|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CU|CV|CX|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EDU|EE|EG|EH|ER|ES|ET|EU|FI|FJ|FK|FM|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GOV|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HM|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IR|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KP|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MH|MIL|MK|ML|MM|MN|MO|MOBI|MP|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NF|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PW|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|ST|SU|SV|SY|SZ|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|R|H|TP|TR|TT|TV|TW|TZ|UA|UG|UK|UM|US|UY|UZ|VA|VC|VE|VG|VI|VN|VU|WF|WS|YE|YT|YU|ZA|ZM|ZW)([\S]*))/gi, "")
+        var contentString = "<div class='infowindow'><p>" + "<br><img class='pic' src='" + attributes.media + "'><br>" + "<a href='#"+ attributes.id_str +"'> See in the list </a><br>" + newText1 + "<br>Created at " + attributes.created_at; + "</p></div>"
         infowindow = new google.maps.InfoWindow
       ({
           content: contentString
@@ -134,6 +134,8 @@ function createMarker(attributes)
         point = data[i];
         var img;
 
+        var newText = data[i].text.replace(/([\S]+\.(MUSEUM|TRAVEL|AERO|ARPA|ASIA|COOP|INFO|NAME|BIZ|CAT|COM|INT|JOBS|NET|ORG|PRO|TEL|AC|AD|AE|AF|AG|AI|AL|AM|AN|AO|AQ|AR|AS|AT|AU|au|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BR|BS|BT|BV|BW|BY|BZ|CA|CC|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CU|CV|CX|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EDU|EE|EG|EH|ER|ES|ET|EU|FI|FJ|FK|FM|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GOV|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HM|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IR|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KP|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MH|MIL|MK|ML|MM|MN|MO|MOBI|MP|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NF|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PW|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|ST|SU|SV|SY|SZ|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|R|H|TP|TR|TT|TV|TW|TZ|UA|UG|UK|UM|US|UY|UZ|VA|VC|VE|VG|VI|VN|VU|WF|WS|YE|YT|YU|ZA|ZM|ZW)([\S]*))/gi, "")
+
         if(point.media === null){
           img = "img/FixSthlm_image_ifnone.png";
         }
@@ -146,7 +148,7 @@ function createMarker(attributes)
           strHTML += "<div class='review col-xs-12 col-md-4'>";
           strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + point.text + "<br>" + point.created_at + "<br></p></div></div></div>" ;
+          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
               $("#list").append(strHTML);
@@ -156,9 +158,9 @@ function createMarker(attributes)
         }
         else if(i%3===1){
           strHTML += "<div class='review col-xs-12 col-md-4'>";
-           strHTML += "<div><a href='#' name='"+ point.id_str +"'></a>";
+          strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>"  + point.text + "<br>" + point.created_at + "<br></p></div></div></div>" ;
+          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
               $("#list").append(strHTML);
@@ -169,10 +171,9 @@ function createMarker(attributes)
         }
         else if(i%3===2){
           strHTML += "<div class='review col-xs-12 col-md-4'>";
-           strHTML += "<div><a href='#' name='"+ point.id_str +"'></a>";
+          strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>"  + point.text + "<br>" + point.created_at + "<br></p></div></div></div>" ;
-        
+          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           strHTML += "</div>" //closing the ROW-div
           //console.log(strHTML);
           $("#list").append(strHTML);
