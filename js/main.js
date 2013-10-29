@@ -92,6 +92,9 @@ function createMarker(attributes)
       icon: iconBase + 'pin_yellow_outline3.png',
     });
 
+    marker.metadata = {type: "point", id: "1"+ attributes.id_str};
+
+
 
       google.maps.event.addListener(marker, 'click', function()
       {
@@ -100,8 +103,8 @@ function createMarker(attributes)
       {
         infowindow.close();
       }
-
-        var contentString = "<div class='infowindow'><p>" + "<br><img class='pic' src='" + attributes.media + "'><br>" + attributes.text + "<br>Created at " + attributes.created_at;"</p></div>"
+     
+        var contentString = "<div class='infowindow'><p>" + "<br><img class='pic' src='" + attributes.media + "'><br>" + "<a href='#"+ attributes.id_str +"'> See in the list </a><br>" + attributes.text + "<br>Created at " + attributes.created_at; + "</p></div>"
         infowindow = new google.maps.InfoWindow
       ({
           content: contentString
@@ -114,7 +117,7 @@ function createMarker(attributes)
       markers.push(marker);
 }
 
-    var url = "https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/?q=select%20%0A%09created_at%2C%0A%20%20%20%20text%2C%0A%20%20%20%20lat%2C%0A%20%20%20%20lng%2C%0A%20%20%20%20media%0Afrom%20tweets%0Agroup%20by%20created_at%0A";
+    var url = "https://free-ec2.scraperwiki.com/b732xeq/738b546f51cf436/sql/?q=select%20%0A%09id_str%2C%0A%20%20%20%20created_at%2C%0A%20%20%20%20text%2C%0A%20%20%20%20lat%2C%0A%20%20%20%20lng%2C%0A%20%20%20%20media%0Afrom%20tweets%0Agroup%20by%20created_at";
     
     $.getJSON(url, function(data) {
        $("#list").empty();
@@ -136,8 +139,9 @@ function createMarker(attributes)
         if(i%3===0){
           strHTML += "<div class='row'>";
           strHTML += "<div class='review col-xs-12 col-md-4'>";
+          strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
+          strHTML += "<p><a  href='#1"+ point.id_str +"'> See in the map </a>" + point.text + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
               $("#list").append(strHTML);
@@ -147,8 +151,9 @@ function createMarker(attributes)
         }
         else if(i%3===1){
           strHTML += "<div class='review col-xs-12 col-md-4'>";
+           strHTML += "<div><a href='#' name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
+          strHTML += "<p><a  href='#1"+ point.id_str +"'> See in the map </a>"  + point.text + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
               $("#list").append(strHTML);
@@ -157,8 +162,9 @@ function createMarker(attributes)
         }
         else if(i%3===2){
           strHTML += "<div class='review col-xs-12 col-md-4'>";
+           strHTML += "<div><a href='#' name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p>" + point.text + "<br>" + point.created_at + "<br></p></div></div>" ;
+          strHTML += "<p><a class='piclinks' href='1"+ point.id_str +"'> See in the MAP </a>"  + point.text + "<br>" + point.created_at + "<br></p></div></div></div>" ;
         
           strHTML += "</div>" //closing the ROW-div
           //console.log(strHTML);
@@ -169,6 +175,7 @@ function createMarker(attributes)
         
         
         if (point.lat != undefined && point.lat != undefined) {
+          
           createMarker(point);
         }
         //console.log(point.text);//
@@ -182,6 +189,40 @@ function createMarker(attributes)
 
      });
 
+  //capture the link events to refer to map
+  $(document).on('click','.piclinks', function(e){
+    //console.log("this many markers: " + markers.length)
+    event.preventDefault();
+    var id = $(this).attr("href");
+    console.log("position: " + markers[2].position);
+    //console.log(markers);
+    map.panTo(markers[2].position);
+    google.maps.event.trigger(markers[2], "click");
+
+/*
+    for(var i = 0;i<markers.length;i++){
+      console.log("Markerid: " + markers[i].metadata.id);
+    }
+*/
+
+    
+
+    
+      //retrieve id through href-attribute'
+      //
+      //console.log("in click ");
+      
+      //id = id.substring(1,id.length);
+//      console.log("link id: "+ id);
+//      if($(id)===null){
+//        console.log("it's null");
+//      }
+//      else{
+//        //console.log($(id));
+//        $(id).hide();
+//      }
+
+  });
     /*function data(response) {
 
     for (var i = 0; i < response.data.length; i++) 
