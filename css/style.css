@@ -18,9 +18,9 @@ h1{
 
 }
 
-.pagragraphtxt{
+.paragraphtxt{
   font-family:'Oxygen';
-  font-size: 14pt;
+  font-size: 16pt;
   text-align:  left;
   
   }
@@ -46,6 +46,7 @@ letter-spacing: 0.2em;
 	width: 100%; 
 	height: 300px; 
 	background-color:#FFE500;
+
 } 
 
 #tbox {
@@ -128,7 +129,7 @@ letter-spacing: 0.2em;
 padding-top: 100px;
 max-width:497px;
 width:100%
-
+	
 
 }
 
