@@ -1,5 +1,6 @@
 html, body {
   /*padding: 40px;*/
+  padding: 0; 
 }
 
 head
@@ -127,7 +128,7 @@ letter-spacing: 0.2em;
 #logo_FS {
 	
 padding-top: 100px;
-max-width:497px;
+max-width:480px;
 width:100%
 	
 
