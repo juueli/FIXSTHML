@@ -148,7 +148,7 @@ function createMarker(attributes)
           strHTML += "<div class='review col-xs-12 col-md-4'>";
           strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
+          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"'> See on the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
               $("#list").append(strHTML);
@@ -160,7 +160,7 @@ function createMarker(attributes)
           strHTML += "<div class='review col-xs-12 col-md-4'>";
           strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
+          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"'> See on the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           if(i === data.length){ //we have reached the final image, close the row
               strHTML += "</div>" //closing the ROW-div
               $("#list").append(strHTML);
@@ -173,7 +173,7 @@ function createMarker(attributes)
           strHTML += "<div class='review col-xs-12 col-md-4'>";
           strHTML += "<div><a name='"+ point.id_str +"'></a>";
           strHTML += "<div class='image'><img class='img-responsive' src='" + img + "'><br>";
-          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"' href='#SeeMap'> See in the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
+          strHTML += "<p><a class='piclinks' id='#"+ point.id_str +"'> See on the map </a><br>" + newText + "<br>" + point.created_at + "<br></p></div></div></div>" ;
           strHTML += "</div>" //closing the ROW-div
           //console.log(strHTML);
           $("#list").append(strHTML);
@@ -201,7 +201,7 @@ function createMarker(attributes)
   $(document).on('click','.piclinks', function(){
     var thisMarkerId=$(this).attr("id")
     console.log(thisMarkerId)
-    //event.preventDefault();
+    event.preventDefault();
 
    for (var i=0;i<markers.length;i++) {
       if(thisMarkerId=="#"+markers[i].markerId){
@@ -210,6 +210,14 @@ function createMarker(attributes)
     map.panTo(markers[i].position);
     google.maps.event.trigger(markers[i], "click");
     map.setZoom(17);
+    document.getElementById('SeeMap').scrollIntoView(true);
+    
+ //   var jump = $(this).attr('href');
+ //   console.log(jump)
+ //   var new_position = $(jump);
+ //   console.log(new_position)
+ //   window.scrollTo(new_position.100,new_position.500);
+ //   return false;
     }
     //console.log("this many markers: " + markers.length)
     //if(markerId)
